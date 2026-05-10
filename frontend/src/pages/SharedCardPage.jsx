@@ -209,7 +209,7 @@ export default function SharedCardPage() {
       </header>
 
       {/* Main reveal */}
-      <main className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-6 pt-6 pb-24 md:px-10">
+      <main className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-6 pt-2 pb-16 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -219,16 +219,13 @@ export default function SharedCardPage() {
           <div className="font-outfit text-[10px] uppercase tracking-[0.4em] text-[#2C362B]/60">
             A card from {card.sender_name}
           </div>
-          <h1 className="mt-3 font-cormorant text-5xl leading-tight md:text-7xl">
-            For{" "}
-            <em className="text-[#E07A5F]">{card.recipient_name}</em>
-            ,
-            <br />
-            with all my love.
+          <h1 className="mt-2 font-cormorant text-3xl leading-tight md:text-5xl">
+            For <em className="text-[#E07A5F]">{card.recipient_name}</em>, with
+            all my love.
           </h1>
         </motion.div>
 
-        <div className="reveal-card mt-10">
+        <div className="reveal-card mt-6 w-full flex justify-center">
           <CardCanvas card={card} size="lg" />
         </div>
 
@@ -236,7 +233,7 @@ export default function SharedCardPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="mt-12 text-center"
+          className="mt-10 text-center"
         >
           <p className="font-cormorant text-xl italic text-[#2C362B]/70">
             &ldquo;The hand that rocks the cradle is the hand that rules the
