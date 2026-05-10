@@ -1,0 +1,124 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 1 (Organic & Earthy) with an elegant editorial twist",
+  "mood": "Sentimental, warm, tactile, high emotional impact",
+  "typography": {
+    "headings": {
+      "family": "Cormorant Garamond",
+      "weights": ["light", "regular", "semibold", "bold"],
+      "usage": "Hero headers, card titles, and high-impact emotional statements. Use tracking-tight for sizes above 32px."
+    },
+    "body": {
+      "family": "Outfit",
+      "weights": ["light", "regular", "medium"],
+      "usage": "Interface elements, buttons, standard text. Gives a modern, clean contrast to the serif headings."
+    },
+    "card_customization_fonts": [
+      { "name": "Dancing Script", "type": "handwritten", "feel": "Intimate & personal" },
+      { "name": "Cormorant Garamond", "type": "serif", "feel": "Elegant & timeless" },
+      { "name": "Caveat", "type": "handwritten", "feel": "Playful & casual" }
+    ]
+  },
+  "colors": {
+    "background": {
+      "hex": "#FDFBF7",
+      "tailwind": "bg-[#FDFBF7]",
+      "description": "Warm Pearl / Alabaster. Replaces standard white to reduce eye strain and feel like premium paper."
+    },
+    "foreground": {
+      "hex": "#2C362B",
+      "tailwind": "text-[#2C362B]",
+      "description": "Deep Pine / Forest Green. Used for all primary text instead of black for a softer, organic contrast."
+    },
+    "primary": {
+      "hex": "#E07A5F",
+      "tailwind": "bg-[#E07A5F]",
+      "foreground": "#FFFFFF",
+      "description": "Terracotta / Warm Rose. Used for primary CTAs like 'Create Card' or 'Share'."
+    },
+    "secondary": {
+      "hex": "#F4E3D7",
+      "tailwind": "bg-[#F4E3D7]",
+      "foreground": "#2C362B",
+      "description": "Soft Peach. Used for secondary buttons, tool active states, and soft backgrounds."
+    },
+    "accent": {
+      "hex": "#E9EDC9",
+      "tailwind": "bg-[#E9EDC9]",
+      "foreground": "#2C362B",
+      "description": "Pale Sage. Used for highlights or decorative elements."
+    },
+    "surface": {
+      "card_bg": "#FFFFFF",
+      "description": "Pure white used strictly for the customizable card itself to provide maximum contrast against stickers and photos."
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing (p-8 to p-24) to create breathing room. The UI should not feel cramped.",
+    "landing_page": {
+      "grid": "Asymmetrical editorial layout (grid-cols-1 md:grid-cols-12).",
+      "hero_span": "col-span-full md:col-span-7",
+      "image_span": "col-span-full md:col-span-5"
+    },
+    "editor_layout": {
+      "grid": "Control Room layout tailored for creation.",
+      "structure": "Sidebar (Tools & Settings: col-span-3) + Canvas Container (col-span-9 bg-background).",
+      "canvas": "Sticky, centered, with high padding to let the card stand out."
+    },
+    "shared_view": {
+      "layout": "Immersive full viewport, center aligned bento-card reveal.",
+      "background": "Soft gradient or abstract floral backdrop, cinematic overlay."
+    }
+  },
+  "components": {
+    "buttons": "Pill-shaped (rounded-full) for primary actions to reinforce the soft archetype. Hover states should lift (-translate-y-1) and cast a warm shadow.",
+    "inputs": "Shadcn standard but with softer borders (border-[#F4E3D7]) and no harsh focus rings. Focus should be a subtle ring of the primary color.",
+    "card_canvas": "Must have a subtle shadow (shadow-xl) and an optional inner border to simulate real card stock. Max-width on mobile to avoid overflow. Ratio typically 5:7.",
+    "stickers_and_frames": "Rendered absolutely positioned inside the card bounds. Implement draggable/resizable if possible, or static placements with customizable coordinates."
+  },
+  "motion_and_interactions": {
+    "page_transitions": "Smooth opacity and slight Y-axis slides via Framer Motion.",
+    "reveal_animation": "When the shared link is opened, the card should scale up slowly (duration: 1.5s) from 0.9 to 1.0 with a blur filter removing.",
+    "particles": "Use react-tsparticles for animated confetti and falling flower petals on the reveal page.",
+    "music": "Implement background music toggler on the shared page (subtle, fade-in HTML5 audio).",
+    "editor_feedback": "Micro-interactions on clicking stickers/frames, AI generation loading state should use a skeleton or subtle pulsing."
+  },
+  "accessibility": {
+    "contrast": "Ensure primary text (#2C362B) on background (#FDFBF7) exceeds 4.5:1 WCAG.",
+    "testing": "All interactive elements MUST use 'data-testid' attributes (e.g., 'data-testid=\"ai-suggest-button\"', 'data-testid=\"share-card-button\"').",
+    "reduced_motion": "Respect prefers-reduced-motion for the particle effects on the shared page."
+  },
+  "media": {
+    "hero_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1551642465-6e7e5b2f10fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxtb3RoZXIlMjBkYXVnaHRlciUyMGxvdmluZyUyMHBvcnRyYWl0fGVufDB8fHx8MTc3ODM5NDQ0MXww&ixlib=rb-4.1.0&q=85",
+        "description": "Mother holding child - emotive portrait for hero landing page."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1609843346269-bfea6fd426c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxtb3RoZXIlMjBkYXVnaHRlciUyMGxvdmluZyUyMHBvcnRyYWl0fGVufDB8fHx8MTc3ODM5NDQ0MXww&ixlib=rb-4.1.0&q=85",
+        "description": "Woman and girl in floral dress - alternative hero image."
+      }
+    ],
+    "background_textures": [
+      {
+        "url": "https://images.unsplash.com/photo-1737276745810-ce753d468a34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwcGFwZXIlMjB0ZXh0dXJlJTIwb2ZmJTIwd2hpdGV8ZW58MHx8fHwxNzc4Mzk0NDQwfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Watercolor paper texture - use as subtle background for the card element to make it feel tactile."
+      }
+    ],
+    "decorations": [
+      {
+        "url": "https://images.unsplash.com/photo-1657426103794-a5937b9d916c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwZmxvcmFsJTIwYm91cXVldHxlbnwwfHx8fDE3NzgzOTQ0MzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Elegant floral bouquet - can be used as an overlapping image in the landing page or as a sticker option."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Setup Tailwind using the colors defined in this JSON. Update index.css to match the background/foreground.",
+    "2. Use 'Cormorant Garamond' and 'Outfit' fonts via Google Fonts.",
+    "3. Build the Landing Page with high emotional impact: huge serif headings, warm images, overlapping bento shapes.",
+    "4. The Editor must have: Image Upload, AI Message Gen, Stickers/Frames logic, and Font/Color pickers. Maintain a beautiful, uncluttered UI.",
+    "5. Use framer-motion for UI transitions and react-tsparticles for the final shared card reveal page.",
+    "6. MUST include data-testid on every interactive element (buttons, tabs, inputs).",
+    "7. Implement an elegant, slow scale-up reveal animation when the user visits /card/:slug."
+  ]
+}
